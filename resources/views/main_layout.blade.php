@@ -45,10 +45,10 @@
         <section class="content">
             @yield('content')
         </section>
-        <footer class="footer mt-auto py-3 bg-dark position-absolute fixed-bottom">
-          <div class="container">
-            <span class="text-white-50 "><p class="text-center">Fatec 2021. Jheniffer Carolina Pereira</p> </span>
-          </div>
+        
+        <footer class="mastfoot fixed-bottom mt-auto py-3 bg-dark ">
+          <div class="inner">
+            <p class="text-center text-white-50">Fatec 2021. Jheniffer Carolina Pereira</p>           </div>
         </footer>
         
         

@@ -12,9 +12,13 @@
 <table class="table table-striped ">
    
     <tr>
+        <th>Codigo</th>
+    
         <th>Nome</th>
-       {{-- <th>Descrição</th>--}}
+       
         <th>Pais</th>
+        
+        
         <th></th>
         <th></th> 
         <th></th>
@@ -22,10 +26,12 @@
     </tr>
     @foreach ($brands as $b)
     <tr>
+        <td>{{ $b->id }}</td>
         <td>{{ $b->name }}</td>
-       {{-- <td>{{ $b->descricao }}</td>--}}
+       
         <td>{{ $b->country }}</td>
-        {{--<td>{{ $p->  }}</td>--}}
+        
+        
         <td><button type="button" class="btn btn-info"><a href="{{ route('brand.show', $b->id) }}" id="botao">Visualizar</a></button></td>
         <td><button type="button" class="btn btn-warning"><a href="{{ route('brand.edit', $b->id) }}" id="botao">Editar</a></button> </td>
         <td><form method="post" action="{{ route('brand.destroy', $b->id) }}">
@@ -41,6 +47,7 @@
        
 </table>
 </div>
+
 
 @else 
 <h3>Nao a marcas cadastradas</h3>

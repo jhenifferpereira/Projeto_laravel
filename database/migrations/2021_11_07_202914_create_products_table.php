@@ -17,10 +17,8 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name', 100);
             $table->string('categoria', 100);
+            $table->foreignId('brand_id')->constrained();
             
-            //$table->string('marca', 100)->nullable();
-            //$table->foreignId('brand_id')->constrained();
-            $table->string('marca', 100);
             $table->timestamps();
 
         });

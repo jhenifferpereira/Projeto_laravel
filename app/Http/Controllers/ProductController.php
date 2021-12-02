@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Product;
 use App\Models\Brand;
 
@@ -18,10 +19,11 @@ class ProductController extends Controller
      */
     public function index()
     {
+        
         $products = Product::all();
 
         return view('products.index')->with('products', $products);
-
+        
     }
 
     /**
@@ -31,12 +33,13 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $brand = Brand::all();
-        return view('products.create')->with('brands', $brand);
-        
-        //Brand::where('brand_id')->orderBy('brand_id')->get();
-
-        //$brands = Brands::where('active', true)->orderBy('name')->pluck('name', 'id');
+        if(Brand::count() != 0){
+            $brands = Brand::orderBy('name')->get();
+        }else{
+            $brands = null;
+        }
+        return view('products.create')->with('brands', $brands);
+                 
         
     }
 
@@ -64,7 +67,9 @@ class ProductController extends Controller
 
             $products->name = $request->input('name');
             $products->categoria = $request->input('categoria');
-            $products->marca = $request->input('marca');
+            //$products->brand_id = $request->input('marca');
+            $products->brand_id = $request->input('brand_id');
+            
 
             $products->save();
 
@@ -114,8 +119,9 @@ class ProductController extends Controller
 
         $products->name = $request->input('name');
         $products->categoria = $request->input('categoria');
-        $products->marca = $request->input('marca');
-        
+        //$products->brand_name = $request->input('brand_name');
+       // $products->brand_id = $request->input('marca');
+        $products->brand_id = $request->input('brand_id');
         $products->save();
 
         return redirect(route('product.index'));

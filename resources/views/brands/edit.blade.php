@@ -7,8 +7,8 @@
 @method('PUT')
 <div class="row justify-content-md-center" >
     <div class="col col-lg-3">
-<label for="name" class="form-label" >Nome:</label>
-<input type="text" name="name" id="name" class="form-control" required value="{{ $brands->name }}">
+<label for="name_marca" class="form-label" >Nome:</label>
+<input type="text" name="name_marca" id="name" class="form-control" required value="{{ $brands->name_marca }}">
     </div></div>
 {{--<label for="descricao">Descrição:</label>
 <input type="text" name="descricao" id="descricao" required value="{{ $brands->descricao }}"> <br>--}}

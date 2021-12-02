@@ -10,7 +10,9 @@ a variável $client será definida no controlador --}}
 
 <p><strong>Nome:</strong>{{ $products->name }}</p>
 <p><strong>Categoria:</strong>{{ $products->categoria }}</p>
-<p><strong>Marca:</strong>{{ $products->marca }}</p>
+{{--<p><strong>Marca:</strong>{{ $products->brand_id }}</p>--}}
+<p><strong>Marca:</strong>{{ $products->brand_id }}</p>
+
     </div></div>
 {{--<p><strong>Id da Marca</strong>{{ $products->brand_id }}</p>
  finalizana a seção --}}

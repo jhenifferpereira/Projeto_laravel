@@ -18,7 +18,7 @@
     <tr>
         <td>{{ $p->name }}</td>
         <td>{{ $p->categoria }}</td>
-        <td>{{ $p->marca }}</td>
+        <td>{{ $p->brand_id }}</td>
         <td><button><a href="{{ route('product.show', $p->id) }}">Visualizar</a></button></td>
         <td><button><a href="{{ route('product.edit', $p->id) }}">Editar</a></button> </td>
         <td><form method="post" action="{{ route('product.destroy', $p->id) }}">

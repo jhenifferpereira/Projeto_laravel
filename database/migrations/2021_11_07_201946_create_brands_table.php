@@ -16,8 +16,8 @@ class CreateBrandsTable extends Migration
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->String('name', 50);
+           
             $table->String('country', 50);
-            //$table->foreignId('product_id')->constrained();
             $table->timestamps();
         });
     }
