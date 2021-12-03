@@ -3,6 +3,7 @@
 @section('content')
 <h1>Cadastrar Produtos</h1>
 <div class="container-fluid">
+    
 <form action="{{ route('product.store')}}" method="post">
     @csrf
     <div class="row justify-content-md-center" >
@@ -39,15 +40,9 @@
     </select>
 </div></div>  
 
-{{-- </label>
+
                 
-                <div class="row justify-content-md-center" >
-                    <div class="col col-lg-3">
-                <label for="brand_id" class="form-label">Categoria:</label>
-                <input type="text" name="brand_id" class="form-control" id="brand_id" required value="{{ $products->Brand_id }}">
-                        </div></div>--}}
-                
-                <div class="d-grid gap-2 col-1 mx-auto">
+                <div class="d-grid gap-2 col-1 mx-auto mb-5">
 <input type="submit" class="btn btn-primary mt-3" name="command" value="Salvar">
 <input type="reset" class="btn btn-primary" value="Limpar">
                 </div>

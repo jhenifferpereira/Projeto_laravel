@@ -8,10 +8,12 @@ use App\Models\Brand;
 
 
 
+
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    private $totalPage = 5;
     /**
      * Display a listing of the resource.
      *
@@ -20,9 +22,16 @@ class ProductController extends Controller
     public function index()
     {
         
-        $products = Product::all();
+        //$products = Product::all();
 
-        return view('products.index')->with('products', $products);
+        //return view('products.index')->with('products', $products);
+        if(Product::count() != 0){
+           
+            $products = Product::all();
+        }else{
+            $products = null;
+        }
+        return view('products.index')->with('products',$products);
         
     }
 

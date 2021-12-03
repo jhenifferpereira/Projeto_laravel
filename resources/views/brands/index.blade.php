@@ -8,8 +8,8 @@
 @if ($brands)
             
 
-<div class="table3">
-<table class="table table-striped ">
+<div class="table3 mb-5">
+<table class="table table-striped mb-5">
    
     <tr>
         <th>Codigo</th>
@@ -41,12 +41,17 @@
             </form> </td>
         
     </tr>
-        
     @endforeach
-
-       
+    
 </table>
+
+        
+    
+    
+    
+
 </div>
+
 
 
 @else 

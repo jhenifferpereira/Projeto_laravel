@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-   
+    private $Page = 5;
+    
     /**
      * Display a listing of the resource.
      *
@@ -19,9 +20,14 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = Brand::all();
-
-        return view('brands.index')->with('brands', $brands);
+        
+        if(Brand::count() != 0){
+            
+            $brands = Brand::all();
+        }else{
+            $brands = null;
+        }
+        return view('brands.index')->with('brands',$brands);
         
     }
 
@@ -48,22 +54,22 @@ class BrandController extends Controller
             'name' => 'required|max:20|',
             
             ];
-            //..cria um array com mensagens personalizadas
+            
             $messages = [
             'required' => 'O campo :attribute precisa ser preenchido!',
-            //'between' => 'O campo :attribute deve estar entre 18 e 30!'
+            
             ];
-            //..executa a validação, passando as mensagens
+            
             $request->validate($rules, $messages);
 
             $brands = new Brand();
-//..seta os dados do model a partir do $request
+
             $brands->name = $request->input('name');
-           // $brands->descricao = $request->input('descricao');
+           
             $brands->country = $request->input('country');
-//..persiste o objeto no BD
+
             $brands->save();
-//..redireciona para o index
+
             return redirect(route('brand.index'));
     }
 
@@ -93,7 +99,7 @@ class BrandController extends Controller
     public function edit($id)
     {
         $brands = Brand::find($id);
-        //..retorna a view com o model a ser editado
+        
         return view('brands.edit')->with('brands', $brands);
     }
 
@@ -107,13 +113,13 @@ class BrandController extends Controller
     public function update(Request $request, $id)
     {
         $brands = Brand::find($id);
-//..seta os novos dados no model
+
         $brands->name = $request->input('name');
-        //$brands->descricao = $request->input('descricao');
+        
         $brands->country = $request->input('country');
-//..salva as alterações
+
         $brands->save();
-//..redireciona para o index
+
         return redirect(route('brand.index'));
     }
 

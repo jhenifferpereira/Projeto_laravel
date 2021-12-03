@@ -32,33 +32,7 @@
         {{--<td>{{ $p->brand_name}}</td>--}}
         <td>{{ $p->brand_id }}</td>
         
-       {{-- 
-        @isset($brands)
-        @foreach ($brands as $b)
-        @isset($brands)
-        @foreach ($brands as $b)
-        <td>{{ $brand->product->nome }}</td>
-        @endforeach
-        @endisset
-        @endforeach
-        @endisset--}}
-
-       {{-- @foreach ($brands as $b)
-        
-        <td>{{ $b->name}}</td>
-        @endforeach
-        @foreach($itens->documentacoes as $documentacao)
-            <tr>
-                <th> {{$documentacao->item_da_documentacao}} </th>
-            </tr>
-@endforeach
-
-
-$produto= Produto::where('id', $id)->first();
-
-
-<td>{{ $p->brands->name}}</td>--}}
-        
+       
         
         <td><button type="button" class="btn btn-info"><a href="{{ route('product.show', $p->id) }}" id="botao">Visualizar</a></button></td>
         <td><button type="button" class="btn btn-warning"><a href="{{ route('product.edit', $p->id) }}" id="botao">Editar</a></button> </td>
@@ -76,7 +50,10 @@ $produto= Produto::where('id', $id)->first();
        
 </table>
 
-</div>
+
+
+
+
 @else 
 
 <h3>Nao a marcas cadastradas</h3>

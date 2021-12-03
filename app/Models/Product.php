@@ -17,7 +17,7 @@ class Product extends Model
 
        
         //..uma instância de Produto pertence a uma instância de Brand
-        return $this->belongsTo(Brand::class, 'brand_name', 'name');
+        return $this->belongsTo(Brand::class, 'brand_id', 'id');
         //return $this->belongsTo(City::class, 'city_id', 'id');
 
         

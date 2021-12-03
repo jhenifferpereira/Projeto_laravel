@@ -10,8 +10,9 @@
     <title>Projeto laravel</title>
 </head>
 <body>
-    <div class="conteiner">
-        
+    <div class="conteiner mb-5">
+        <div class="row mb-5">
+          
         <header>
             <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-5">
               <div class="container-fluid">
@@ -45,14 +46,16 @@
         <section class="content">
             @yield('content')
         </section>
-        
-        <footer class="mastfoot fixed-bottom mt-auto py-3 bg-dark ">
+        </div>
+      </div>
+        <div class="row fixed-bottom">
+        <footer class="navbar-fixed-bottom mb-0 mt-5 py-3 bg-dark ">
           <div class="inner">
-            <p class="text-center text-white-50">Fatec 2021. Jheniffer Carolina Pereira</p>           </div>
+            <p class="text-center text-white-50">Fatec 2021. Jheniffer Carolina Pereira</p>  </div>
         </footer>
-        
-        
-    </div>
+        </div>
+      
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
