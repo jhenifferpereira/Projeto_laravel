@@ -30,7 +30,7 @@
        {{-- <td>{{ $b->descricao }}</td>--}}
         <td>{{ $p->categoria }}</td>
         {{--<td>{{ $p->brand_name}}</td>--}}
-        <td>{{ $p->brand_id }}</td>
+        <td>{{ $p->brand_id->$brands->name }}</td>
         
        
         
